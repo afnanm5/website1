@@ -1,36 +1,37 @@
 // app/projects/ProjectSearch.tsx
-"use client";  // Add this line at the top of your file to mark this as a client component
 
-import { useState } from "react";
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  // Add any other properties relevant to your project
+}
 
-const ProjectSearch = ({ projects }: { projects: any[] }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const ProjectSearch = ({ projects }: { projects: Project[] }) => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
-  const filteredProjects = projects.filter(project =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // Filter projects based on the search term
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="p-4">
+    <div>
       <input
         type="text"
         placeholder="Search Projects"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 border rounded-md w-full mb-4"
+        className="p-2 rounded-md border"
       />
-      <div>
-        {filteredProjects.length === 0 ? (
-          <p>No projects found</p>
-        ) : (
-          filteredProjects.map((project) => (
-            <div key={project.id} className="p-4 border-b">
-              <h3 className="font-semibold">{project.name}</h3>
-              <p>{project.description}</p>
-            </div>
-          ))
-        )}
-      </div>
+      <ul>
+        {filteredProjects.map((project) => (
+          <li key={project.id}>
+            <h3 className="font-bold">{project.title}</h3>
+            <p>{project.description}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
