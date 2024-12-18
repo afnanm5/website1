@@ -1,5 +1,6 @@
 // app/layout.tsx
 import "../styles/globals.css";  // Import global styles
+import Link from 'next/link'; // Add this line to import Link
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
