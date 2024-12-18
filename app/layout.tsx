@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         <header className="bg-blue-500 p-4 text-white text-center">
-          <h1 className="text-3xl font-bold">Afnan Monzur's Portfolio</h1>
+          <h1 className="text-3xl font-bold">Afnan Monzur&apos;s Portfolio</h1>
         </header>
         <main>{children}</main>
         <footer className="bg-gray-800 text-white text-center p-4">
