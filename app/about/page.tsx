@@ -1,37 +1,19 @@
-'use client'; // Ensure it's a client-side component
-import React from "react";
-import Image from "next/image"; // Optional for images
+'use client';
 
-const AboutPage = () => {
+import React from 'react';
+
+const About = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-4">
-      <div className="max-w-4xl text-center py-20 space-y-6">
-        <h1 className="text-4xl font-bold">About Me</h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-          Hello! I'm Afnan Monzur, a computer science student at Toronto Metropolitan University. I specialize in building web applications, data analysis tools, and more. My primary focus is enhancing my skills in programming and problem-solving.
-        </p>
-        <div className="space-x-8 mt-8">
-          <Image
-            src="/path/to/your-image.jpg" // Add your profile image
-            alt="Afnan Monzur"
-            width={200}
-            height={200}
-            className="rounded-full border-4 border-teal-500"
-          />
-        </div>
-        <div className="mt-12">
-          <h2 className="text-3xl font-semibold mb-4">Skills & Technologies</h2>
-          <ul className="text-lg text-gray-400">
-            <li>Python, Java, C, Smalltalk</li>
-            <li>ReactJS, Next.js</li>
-            <li>Matplotlib, OpenWeatherMap API</li>
-            <li>Git, GitHub</li>
-            <li>Cybersecurity Basics</li>
-          </ul>
-        </div>
-      </div>
+    <div className="bg-gray-900 text-white p-6 min-h-screen flex flex-col items-center justify-center">
+      <h2 className="text-4xl font-bold mb-4">About Me</h2>
+      <p className="text-lg mb-6 max-w-2xl text-center">
+        I&apos;m a passionate developer with a strong foundation in computer science. I am currently pursuing a Bachelor's degree in Computer Science with a minor in Cybersecurity at Toronto Metropolitan University.
+      </p>
+      <p className="text-lg max-w-2xl text-center">
+        I have worked on various projects involving web development, Python, data analysis, and more. I enjoy solving problems and continuously learning to improve my skills.
+      </p>
     </div>
   );
 };
 
-export default AboutPage;
+export default About;
