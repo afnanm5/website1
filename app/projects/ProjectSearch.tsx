@@ -3,35 +3,36 @@
 
 import { useState } from "react";
 
-// Change 'title' to 'name' here
 interface Project {
   id: number;
-  name: string;  // use 'name' instead of 'title'
+  title: string;
   description: string;
 }
 
 const ProjectSearch = ({ projects }: { projects: Project[] }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  // Filter projects based on the search term
   const filteredProjects = projects.filter((project) =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase())
+    project.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="mt-4">
+    <div className="max-w-4xl mx-auto mt-8">
       <input
         type="text"
-        className="p-2 rounded border"
-        placeholder="Search projects..."
+        className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#A7D8D8] mb-8"
+        placeholder="Search for a project..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <div className="mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project) => (
-          <div key={project.id} className="mb-4">
-            <h3 className="text-xl font-semibold">{project.name}</h3>
-            <p>{project.description}</p>
+          <div
+            key={project.id}
+            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <h3 className="text-2xl font-semibold text-[#2D4F4F]">{project.title}</h3>
+            <p className="text-lg text-[#4B6B6B] mt-2">{project.description}</p>
           </div>
         ))}
       </div>

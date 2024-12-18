@@ -1,26 +1,24 @@
 // app/home/page.tsx
+"use client";
+
+import { useState } from "react";
+
 const HomePage = () => {
   return (
-    <div className="relative h-screen bg-teal-light flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-teal-500 opacity-50"></div>
-      <div className="relative text-center text-white px-6 sm:px-12 md:px-20">
-        <h1 className="text-5xl font-extrabold leading-tight mb-4">
+    <div className="bg-[#F1FAF6] text-center">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl font-extrabold text-[#2D4F4F] mt-20">
           Welcome to My Portfolio
         </h1>
-        <p className="text-xl mb-6">
-          I’m Afnan Monzur, a Computer Science student passionate about building real-world solutions. Explore my projects, skills, and experiences in the world of technology and innovation.
+        <p className="text-xl mt-6 text-[#4B6B6B]">
+          Hello! I am Afnan Monzur, a passionate Computer Science student at
+          Toronto Metropolitan University, specializing in Cybersecurity.
         </p>
-        <a
-          href="#about"
-          className="inline-block px-6 py-3 bg-teal-700 text-white text-lg font-semibold rounded-lg hover:bg-teal-600 transition-all"
-        >
-          Learn More About Me
-        </a>
-      </div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-        <a href="#about" className="animate-bounce text-white text-4xl">
-          ↓
-        </a>
+        <div className="mt-10">
+          <p className="text-lg text-[#4B6B6B]">
+            Explore my journey, projects, and achievements.
+          </p>
+        </div>
       </div>
     </div>
   );
