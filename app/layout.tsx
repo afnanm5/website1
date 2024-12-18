@@ -7,6 +7,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <header className="bg-blue-500 p-4 text-white text-center">
           <h1 className="text-3xl font-bold">Afnan Monzur&apos;s Portfolio</h1>
+          <nav>
+            <ul className="flex justify-center space-x-4">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
         </header>
         <main>{children}</main>
         <footer className="bg-gray-800 text-white text-center p-4">
