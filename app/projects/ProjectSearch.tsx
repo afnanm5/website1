@@ -1,8 +1,9 @@
 // app/projects/ProjectSearch.tsx
+import { useState } from 'react'; // <-- Add this import statement
 
 interface Project {
   id: number;
-  name: string; // Changed from 'title' to 'name'
+  name: string;
   description: string;
 }
 
@@ -26,7 +27,7 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
       <ul>
         {filteredProjects.map((project) => (
           <li key={project.id}>
-            <h3 className="font-bold">{project.name}</h3> {/* Changed from 'title' to 'name' */}
+            <h3 className="font-bold">{project.name}</h3>
             <p>{project.description}</p>
           </li>
         ))}
