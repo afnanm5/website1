@@ -1,22 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600;700&display=swap');
 
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a beautiful, light background color */
 body {
-  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7; /* Light gray */
+  color: #333333; /* Dark text for readability */
+  font-family: 'Roboto', sans-serif; /* Smooth and modern font */
+  line-height: 1.6;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
+/* Text and link styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Elegant font for headings */
+  font-weight: bold;
+  color: #2b2b2b;
 }
 
-.bg-[#A7D8D8] {
-  background-color: #A7D8D8;
+/* Link styles */
+a {
+  color: #0070f3; /* Bright blue for links */
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.text-[#2D4F4F] {
-  color: #2D4F4F;
+a:hover {
+  color: #0258a0; /* Darken on hover */
+  text-decoration: underline;
 }
 
-.text-[#4B6B6B] {
-  color: #4B6B6B;
+/* Navigation bar styling */
+nav {
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #eaeaea; /* Subtle border */
+  padding: 10px 20px;
+}
+
+nav a {
+  font-size: 16px;
+  margin: 0 15px;
+  color: #333;
+}
+
+nav a:hover {
+  color: #0070f3;
+}
+
+/* Add responsive media queries for smaller screens */
+@media (max-width: 768px) {
+  nav {
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+}
+
+/* Customize buttons and form inputs */
+button,
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+button {
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0258a0;
+}
+
+/* Main section styling */
+main {
+  padding: 20px;
+  background-color: #ffffff; /* White background for main content */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 1200px;
+}
+
+/* Hero section styling */
+.hero {
+  background-color: #0070f3;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #444;
+}
+
+footer a {
+  color: #0070f3;
+  text-decoration: none;
 }
