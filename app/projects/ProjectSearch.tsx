@@ -9,33 +9,21 @@ interface Project {
   description: string;
 }
 
-const ProjectSearch = () => {
-  const [searchQuery, setSearchQuery] = useState<string>(''); // Explicitly set the type as string
-  const [searchResults, setSearchResults] = useState<Project[]>([
-    {
-      id: 1,
-      name: 'Word Cloud Generator',
-      description: 'Developed a word cloud generator using Python and matplotlib.',
-    },
-    {
-      id: 2,
-      name: 'Expense Tracker',
-      description: 'Implemented a user-friendly expense tracking tool with Python.',
-    },
-    {
-      id: 3,
-      name: 'BMI Calculator',
-      description: 'A BMI calculator using Python to assess health metrics.',
-    },
-  ]);
+// Define props to accept the projects array
+interface ProjectSearchProps {
+  projects: Project[];
+}
 
-  // Specify the event type for input change
+const ProjectSearch: React.FC<ProjectSearchProps> = ({ projects }) => {
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchResults, setSearchResults] = useState<Project[]>(projects);
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     setSearchQuery(query);
     // Filter projects based on search query
     setSearchResults(
-      searchResults.filter((project) =>
+      projects.filter((project) =>
         project.name.toLowerCase().includes(query.toLowerCase())
       )
     );

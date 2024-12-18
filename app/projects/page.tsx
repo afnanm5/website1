@@ -1,27 +1,26 @@
 'use client';
 
-import React, { useState } from 'react';
-import ProjectSearch from './ProjectSearch'; // Correct path to your component
+import React from 'react';
+import ProjectSearch from './ProjectSearch'; // Update the path as needed
 
-const ProjectsPage = () => {
-  const [projects] = useState([
+const Page = () => {
+  const projects = [
     {
       id: 1,
       name: 'Word Cloud Generator',
-      description: 'A Python app that generates word clouds from text.',
+      description: 'Developed a word cloud generator using Python and matplotlib.',
     },
     {
       id: 2,
       name: 'Expense Tracker',
-      description: 'A simple Python app for tracking your expenses.',
+      description: 'Implemented a user-friendly expense tracking tool with Python.',
     },
     {
       id: 3,
       name: 'BMI Calculator',
-      description: 'A Python app to calculate BMI based on user input.',
+      description: 'A BMI calculator using Python to assess health metrics.',
     },
-    // Add more projects here
-  ]);
+  ];
 
   return (
     <div>
@@ -31,4 +30,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default Page;
