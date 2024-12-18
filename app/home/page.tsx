@@ -1,8 +1,6 @@
 // app/home/page.tsx
 "use client";
 
-import { useState } from "react";
-
 const HomePage = () => {
   return (
     <div className="bg-[#F1FAF6] text-center">

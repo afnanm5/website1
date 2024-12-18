@@ -17,7 +17,7 @@ const AboutPage = () => {
           <p className="text-lg text-[#4B6B6B] mt-2">
             <strong>Toronto Metropolitan University</strong>
             <br />
-            Bachelor of Science in Computer Science | Minor in Cyber-security
+            Bachelor of Science in Computer Science | Minor in Cybersecurity
             (Expected June 2025)
           </p>
         </div>
