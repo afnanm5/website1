@@ -1,27 +1,63 @@
-// app/layout.tsx
-"use client";
+// Mark the file as a client component using "use client"
+'use client';
 
-import "../styles/globals.css";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+// Define the Layout component
+const Layout = ({ children }: { children: ReactNode }) => {
+  const [activeLink, setActiveLink] = useState<string>('');
+
+  // Handle active link change
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link);
+  };
+
   return (
-    <div className="bg-[#F1FAF6] font-sans text-gray-800 min-h-screen">
-      <header className="bg-[#A7D8D8] py-4 shadow-md">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-4">
-          <h1 className="text-3xl font-bold text-[#2D4F4F]">Afnan Monzur</h1>
-          <nav className="space-x-6 text-lg">
-            <Link href="/" className="hover:text-[#2D4F4F] transition duration-300">Home</Link>
-            <Link href="/about" className="hover:text-[#2D4F4F] transition duration-300">About</Link>
-            <Link href="/projects" className="hover:text-[#2D4F4F] transition duration-300">Projects</Link>
-          </nav>
-        </div>
-      </header>
-      <main className="py-12 px-6">{children}</main>
-      <footer className="bg-[#A7D8D8] py-6 text-center text-white">
-        <p>&copy; 2024 Afnan Monzur</p>
-      </footer>
-    </div>
+    <html lang="en">
+      <head>
+        <title>Afnan Monzur Portfolio</title>
+        <meta name="description" content="Afnan Monzur's personal portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body className="bg-teal-50 text-gray-900">
+        {/* Navigation bar */}
+        <nav className="py-4 px-6 bg-teal-100 shadow-lg">
+          <div className="container mx-auto flex justify-between items-center">
+            <div className="text-xl font-semibold text-gray-800">
+              <Link href="/" className="hover:text-teal-600" onClick={() => handleLinkClick('home')}>
+                Home
+              </Link>
+            </div>
+            <div className="space-x-6">
+              <Link
+                href="/about"
+                className={`hover:text-teal-600 ${activeLink === 'about' ? 'text-teal-600' : ''}`}
+                onClick={() => handleLinkClick('about')}
+              >
+                About
+              </Link>
+              <Link
+                href="/projects"
+                className={`hover:text-teal-600 ${activeLink === 'projects' ? 'text-teal-600' : ''}`}
+                onClick={() => handleLinkClick('projects')}
+              >
+                Projects
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* Main content */}
+        <main className="container mx-auto p-6">{children}</main>
+
+        {/* Footer */}
+        <footer className="bg-teal-100 py-4 text-center text-gray-800">
+          <p>&copy; 2024 Afnan Monzur. All rights reserved.</p>
+        </footer>
+      </body>
+    </html>
   );
 };
 
