@@ -1,42 +1,21 @@
 // app/projects/page.tsx
 import ProjectSearch from "./ProjectSearch";
 
-const ProjectsPage = () => {
-  const projects = [
-    {
-      title: "Word Cloud Generator",
-      description:
-        "Developed using Python and matplotlib. It generates visually appealing word clouds based on text input like blog posts, articles, or research papers.",
-    },
-    {
-      title: "Expense Tracker",
-      description:
-        "Implemented data storage and retrieval with Python. It allows users to track and analyze their spending habits with reports.",
-    },
-    {
-      title: "BMI Calculator",
-      description:
-        "A Python application that calculates Body Mass Index based on user inputs for height and weight.",
-    },
-    {
-      title: "Trivia Quiz",
-      description:
-        "Developed a trivia quiz game with a database of trivia questions and scoring system to track users' performance.",
-    },
-    {
-      title: "Weather Bot",
-      description:
-        "Built using Python and the OpenWeatherMap API to provide weather data for any location entered by the user.",
-    },
-  ];
+const projects = [
+  { id: 1, name: "Word Cloud Generator", description: "Developed a word cloud generator using Python and matplotlib." },
+  { id: 2, name: "Expense Tracker", description: "Implemented data storage and retrieval functionalities using Python to track expenses." },
+  { id: 3, name: "BMI Calculator", description: "Implemented a BMI calculator application to calculate BMI based on user input for height and weight." },
+  { id: 4, name: "Trivia Quiz", description: "Created a trivia quiz game with a scoring system to track users' performance." },
+  { id: 5, name: "Weather Bot", description: "Developed a weather bot using the OpenWeatherMap API to provide current weather conditions." },
+];
 
+const ProjectsPage = () => {
   return (
-    <div className="py-10 px-4 bg-teal-light text-teal-dark">
-      <h2 className="text-4xl font-semibold mb-8">My Projects</h2>
+    <div className="text-center py-10">
+      <h2 className="text-3xl font-semibold text-gray-800">Projects</h2>
       <ProjectSearch projects={projects} />
     </div>
   );
 };
 
 export default ProjectsPage;
-
