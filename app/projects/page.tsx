@@ -1,5 +1,6 @@
 // app/projects/page.tsx
-import ProjectSearch from "./ProjectSearch";
+
+import ProjectSearch from './ProjectSearch';
 
 const projects = [
   { id: 1, name: "Word Cloud Generator", description: "Developed a word cloud generator using Python and matplotlib." },
@@ -11,8 +12,8 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <div className="text-center py-10">
-      <h2 className="text-3xl font-semibold text-gray-800">Projects</h2>
+    <div>
+      <h2>Projects</h2>
       <ProjectSearch projects={projects} />
     </div>
   );

@@ -2,9 +2,8 @@
 
 interface Project {
   id: number;
-  title: string;
+  name: string; // Changed from 'title' to 'name'
   description: string;
-  // Add any other properties relevant to your project
 }
 
 const ProjectSearch = ({ projects }: { projects: Project[] }) => {
@@ -12,7 +11,7 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
 
   // Filter projects based on the search term
   const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(searchTerm.toLowerCase())
+    project.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -27,7 +26,7 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
       <ul>
         {filteredProjects.map((project) => (
           <li key={project.id}>
-            <h3 className="font-bold">{project.title}</h3>
+            <h3 className="font-bold">{project.name}</h3> {/* Changed from 'title' to 'name' */}
             <p>{project.description}</p>
           </li>
         ))}
