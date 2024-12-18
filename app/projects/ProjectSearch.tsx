@@ -1,9 +1,12 @@
 // app/projects/ProjectSearch.tsx
-import { useState } from 'react'; // <-- Add this import statement
+
+"use client"; // <-- Add this line at the top
+
+import { useState } from "react";
 
 interface Project {
   id: number;
-  name: string;
+  title: string;
   description: string;
 }
 
@@ -12,26 +15,26 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
 
   // Filter projects based on the search term
   const filteredProjects = projects.filter((project) =>
-    project.name.toLowerCase().includes(searchTerm.toLowerCase())
+    project.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div>
+    <div className="mt-4">
       <input
         type="text"
-        placeholder="Search Projects"
+        className="p-2 rounded border"
+        placeholder="Search projects..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 rounded-md border"
       />
-      <ul>
+      <div className="mt-4">
         {filteredProjects.map((project) => (
-          <li key={project.id}>
-            <h3 className="font-bold">{project.name}</h3>
+          <div key={project.id} className="mb-4">
+            <h3 className="text-xl font-semibold">{project.title}</h3>
             <p>{project.description}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
