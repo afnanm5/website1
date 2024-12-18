@@ -25,3 +25,49 @@ a:hover {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* Custom animation for server bubbles */
+.server-bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a202c; /* Dark background for bubbles */
+  padding: 20px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.server-bubble:hover {
+  transform: scale(1.2); /* Scale the bubble to 1.2x on hover */
+}
+
+
+/* Custom styles for Project Search */
+input[type="text"] {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #4fd1c5;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #2c7a7b;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+  background-color: #2d3748;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  background-color: #4a5568;
+}
+
