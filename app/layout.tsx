@@ -1,3 +1,5 @@
+'use client'; // Add this at the top to make it a client component
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -9,33 +11,21 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <title>Afnan Monzur Portfolio</title>
       </head>
-      <body className="bg-dark text-white">
-        <nav className="flex justify-between items-center p-4 bg-gradient-to-r from-teal-500 to-teal-700">
+      <body>
+        <nav>
           <div>
-            <Link
-              href="/"
-              className={`p-4 ${activeLink === 'home' ? 'text-yellow-500' : 'text-white'}`}
-              onClick={() => setActiveLink('home')}
-            >
+            <Link href="/" passHref>
               Home
             </Link>
-            <Link
-              href="/about"
-              className={`p-4 ${activeLink === 'about' ? 'text-yellow-500' : 'text-white'}`}
-              onClick={() => setActiveLink('about')}
-            >
+            <Link href="/about" passHref>
               About
             </Link>
-            <Link
-              href="/projects"
-              className={`p-4 ${activeLink === 'projects' ? 'text-yellow-500' : 'text-white'}`}
-              onClick={() => setActiveLink('projects')}
-            >
+            <Link href="/projects" passHref>
               Projects
             </Link>
           </div>
         </nav>
-        <main className="container mx-auto py-8">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
