@@ -1,12 +1,12 @@
 // app/projects/ProjectSearch.tsx
-
-"use client"; // <-- Add this line at the top
+"use client";
 
 import { useState } from "react";
 
+// Change 'title' to 'name' here
 interface Project {
   id: number;
-  title: string;
+  name: string;  // use 'name' instead of 'title'
   description: string;
 }
 
@@ -15,7 +15,7 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
 
   // Filter projects based on the search term
   const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(searchTerm.toLowerCase())
+    project.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -30,7 +30,7 @@ const ProjectSearch = ({ projects }: { projects: Project[] }) => {
       <div className="mt-4">
         {filteredProjects.map((project) => (
           <div key={project.id} className="mb-4">
-            <h3 className="text-xl font-semibold">{project.title}</h3>
+            <h3 className="text-xl font-semibold">{project.name}</h3>
             <p>{project.description}</p>
           </div>
         ))}
