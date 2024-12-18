@@ -1,38 +1,27 @@
-/* globals.css */
-
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background-color: #181818;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
-  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-h2, h3 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
+a:hover {
+  color: #f39c12;
 }
 
-input[type="text"] {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
+.bg-dark {
+  background-color: #181818;
 }
 
-button {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.text-gradient {
+  background-image: linear-gradient(to right, #1abc9c, #16a085);
 }
 
-button:hover {
-  background-color: #0056b3;
+.text-transparent {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }

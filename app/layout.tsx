@@ -1,10 +1,5 @@
-// app/layout.tsx
-
-'use client'; // Add this line to make the component a client component
-
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [activeLink, setActiveLink] = useState<string>('');
@@ -14,15 +9,33 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <title>Afnan Monzur Portfolio</title>
       </head>
-      <body className="bg-gray-50">
-        <nav className="p-4 bg-gradient-to-r from-blue-500 to-green-500 text-white">
-          <div className="flex justify-center space-x-8">
-            <Link href="/" className="hover:text-blue-300">Home</Link>
-            <Link href="/about" className="hover:text-blue-300">About</Link>
-            <Link href="/projects" className="hover:text-blue-300">Projects</Link>
+      <body className="bg-dark text-white">
+        <nav className="flex justify-between items-center p-4 bg-gradient-to-r from-teal-500 to-teal-700">
+          <div>
+            <Link
+              href="/"
+              className={`p-4 ${activeLink === 'home' ? 'text-yellow-500' : 'text-white'}`}
+              onClick={() => setActiveLink('home')}
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className={`p-4 ${activeLink === 'about' ? 'text-yellow-500' : 'text-white'}`}
+              onClick={() => setActiveLink('about')}
+            >
+              About
+            </Link>
+            <Link
+              href="/projects"
+              className={`p-4 ${activeLink === 'projects' ? 'text-yellow-500' : 'text-white'}`}
+              onClick={() => setActiveLink('projects')}
+            >
+              Projects
+            </Link>
           </div>
         </nav>
-        <main>{children}</main>
+        <main className="container mx-auto py-8">{children}</main>
       </body>
     </html>
   );

@@ -1,19 +1,21 @@
-// app/home/page.tsx
-
 import React from 'react';
-import { BackgroundLines } from '@/components/ui/BackgroundLines'; // Ensure this path is correct
-import Link from 'next/link';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <BackgroundLines className="flex items-center justify-center w-full flex-col px-4 py-10">
-      <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-        Afnan Monzur Portfolio
-      </h2>
-      <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center mb-6">
-        Welcome to my portfolio. I am a Computer Science student with experience in software development and cybersecurity.
+    <div className="text-center">
+      <h1 className="text-4xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-700 py-8">
+        Afnan Monzur - Full Stack Developer
+      </h1>
+      <p className="text-lg mb-6 text-gray-300">
+        Passionate about technology, coding, and learning new things. I specialize in building web applications and solving complex problems.
       </p>
-      <Link href="/projects" className="text-blue-500 hover:underline">View My Projects</Link>
-    </BackgroundLines>
+      <div className="py-6 px-4 bg-gray-900 text-white">
+        <h2 className="text-2xl font-bold mb-4">Projects</h2>
+        <p>Click below to explore some of the projects I've worked on.</p>
+        <Link href="/projects" className="mt-4 inline-block text-teal-500 hover:text-teal-700">
+          Explore Projects →
+        </Link>
+      </div>
+    </div>
   );
 }
