@@ -1,30 +1,19 @@
+// app/about/page.tsx
+'use client';
+
 import React from 'react';
 
 export default function About() {
   return (
-    <div className="bg-dark text-white p-8">
-      <h1 className="text-4xl font-bold text-teal-400">About Me</h1>
-      <p className="mt-4 text-lg text-gray-300">
-        I am a Computer Science student at Toronto Metropolitan University with a passion for technology and coding.
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-900 text-white">
+      <h2 className="text-4xl font-bold mb-6">About Me</h2>
+      <p className="text-lg text-center max-w-3xl mb-6">
+        Hi! I'm Afnan Monzur, a Computer Science student at Toronto Metropolitan University with a focus in Cyber-security. 
+        I enjoy coding, problem solving, and working on interesting projects. I&rsquo;m passionate about learning and continuously improving my skills.
       </p>
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold text-teal-500">Education</h2>
-        <p className="mt-2">
-          <strong>Bachelor of Science in Computer Science | Minor in Cyber-security</strong>
-          <br />
-          Toronto Metropolitan University, June 2025
-        </p>
-      </section>
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold text-teal-500">Projects</h2>
-        <ul className="list-disc ml-8 mt-4">
-          <li>Word Cloud Generator</li>
-          <li>Expense Tracker</li>
-          <li>BMI Calculator</li>
-          <li>Trivia Quiz</li>
-          <li>Weather Bot</li>
-        </ul>
-      </section>
+      <p className="text-lg text-center max-w-3xl">
+        Currently, I'm looking for opportunities to apply my knowledge in real-world projects. I have experience in Python, Java, ReactJS, and more!
+      </p>
     </div>
   );
 }

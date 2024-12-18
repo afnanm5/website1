@@ -1,31 +1,24 @@
-'use client'; // Add this at the top to make it a client component
+// app/layout.tsx
+'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [activeLink, setActiveLink] = useState<string>('');
-
   return (
     <html lang="en">
       <head>
         <title>Afnan Monzur Portfolio</title>
       </head>
-      <body>
-        <nav>
-          <div>
-            <Link href="/" passHref>
-              Home
-            </Link>
-            <Link href="/about" passHref>
-              About
-            </Link>
-            <Link href="/projects" passHref>
-              Projects
-            </Link>
+      <body className="bg-gray-900 text-white">
+        <nav className="bg-gray-800 p-4">
+          <div className="max-w-7xl mx-auto flex justify-between">
+            <Link href="/" className="text-2xl text-teal-400 hover:text-teal-600">Home</Link>
+            <Link href="/about" className="text-2xl text-teal-400 hover:text-teal-600">About</Link>
+            <Link href="/projects" className="text-2xl text-teal-400 hover:text-teal-600">Projects</Link>
           </div>
         </nav>
-        <main>{children}</main>
+        <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
       </body>
     </html>
   );
