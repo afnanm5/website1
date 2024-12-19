@@ -1,20 +1,24 @@
-'use client';
+// app/home/page.tsx
+'use client'
 
-import React from 'react';
 import Link from 'next/link';
 
-const Home = () => {
-  return (
-    <div className="flex flex-col items-center justify-center bg-gray-800 text-white h-screen p-6">
-      <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">Welcome to My Portfolio</h1>
-      <p className="text-lg mb-4 text-center">
-        I'm Afnan Monzur, a passionate developer specializing in full-stack development, with experience in Python, JavaScript, and more.
-      </p>
-      <Link href="/projects" className="mt-6 inline-block text-teal-500 hover:text-teal-700 text-xl">
-        View My Projects →
-      </Link>
-    </div>
-  );
-};
+export default function HomePage() {
+    return (
+        <div className="flex flex-col items-center justify-center h-screen bg-teal-800">
+            <h1 className="text-4xl font-bold text-white mb-4">Welcome to My Resume Website</h1>
 
-export default Home;
+            <div className="flex space-x-8">
+                <Link href="/home" className="bubble p-4 text-xl text-white hover:text-teal-500 hover:scale-125 transition-all duration-300">
+                    Home
+                </Link>
+                <Link href="/about" className="bubble p-4 text-xl text-white hover:text-teal-500 hover:scale-125 transition-all duration-300">
+                    About
+                </Link>
+                <Link href="/projects" className="bubble p-4 text-xl text-white hover:text-teal-500 hover:scale-125 transition-all duration-300">
+                    Projects
+                </Link>
+            </div>
+        </div>
+    );
+}

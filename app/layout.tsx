@@ -1,27 +1,20 @@
 // app/layout.tsx
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
+import '../styles/globals.css';
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <html lang="en">
-      <head>
-        <title>Afnan Monzur Portfolio</title>
-      </head>
-      <body className="bg-gray-900 text-white">
-        <nav className="bg-gray-800 p-4">
-          <div className="max-w-7xl mx-auto flex justify-between">
-            <Link href="/" className="text-2xl text-teal-400 hover:text-teal-600">Home</Link>
-            <Link href="/about" className="text-2xl text-teal-400 hover:text-teal-600">About</Link>
-            <Link href="/projects" className="text-2xl text-teal-400 hover:text-teal-600">Projects</Link>
-          </div>
-        </nav>
-        <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
-      </body>
-    </html>
-  );
-};
+export default function Layout({ children }) {
+    return (
+        <div className="relative min-h-screen bg-black text-white">
+            {/* Background Video */}
+            <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+                <source src="https://motionbgs.com/media/5044/abstract-blue-smoke.960x540.mp4" type="video/mp4" />
+            </video>
 
-export default Layout;
+            {/* Content Area */}
+            <div className="relative z-10 p-8">
+                {children}
+            </div>
+        </div>
+    );
+}

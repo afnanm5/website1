@@ -1,19 +1,35 @@
-'use client';
+// app/about/page.tsx
+'use client'
 
-import React from 'react';
+export default function AboutPage() {
+    return (
+        <div className="bg-teal-800 text-white p-8">
+            <h2 className="text-3xl font-semibold mb-4">About Afnan Monzur</h2>
+            <p className="mb-2">Afnan Monzur</p>
+            <p className="mb-2">647-967-9715 | afnanm.0505@gmail.com</p>
 
-const About = () => {
-  return (
-    <div className="bg-gray-900 text-white p-6 min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-4xl font-bold mb-4">About Me</h2>
-      <p className="text-lg mb-6 max-w-2xl text-center">
-        I&apos;m a passionate developer with a strong foundation in computer science. I am currently pursuing a Bachelor's degree in Computer Science with a minor in Cybersecurity at Toronto Metropolitan University.
-      </p>
-      <p className="text-lg max-w-2xl text-center">
-        I have worked on various projects involving web development, Python, data analysis, and more. I enjoy solving problems and continuously learning to improve my skills.
-      </p>
-    </div>
-  );
-};
+            <h3 className="mt-4 text-2xl font-semibold">Education</h3>
+            <p>Toronto Metropolitan University, Toronto, ON</p>
+            <p>Bachelor of Science in Computer Science | Minor in Cyber-security</p>
 
-export default About;
+            <h3 className="mt-4 text-2xl font-semibold">Technical Skills</h3>
+            <p>Languages: Python, Java, Smalltalk, C</p>
+            <p>Developer Tools: Github, ReactJS, Matplotlib, OpenWeatherMap API</p>
+
+            <h3 className="mt-4 text-2xl font-semibold">Experience</h3>
+            <p>Provincial Elections Canada - Information Assistant (Jun 2022)</p>
+            <ul>
+                <li>Greeted voters and provided customer satisfaction.</li>
+                <li>Informed voters about any shortcomings and limitations.</li>
+                <li>Guided voters to appropriate locations and answered inquiries.</li>
+            </ul>
+
+            <p>SAWRO - Computer Literacy Instructor (Jun 2017 - Jan 2018)</p>
+            <ul>
+                <li>Managed and supported clients in achieving computer literacy.</li>
+                <li>Monitored clients and provided assistance towards growth.</li>
+                <li>Reported findings to administration regarding performance.</li>
+            </ul>
+        </div>
+    );
+}
