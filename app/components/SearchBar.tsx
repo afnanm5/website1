@@ -1,7 +1,12 @@
 // app/components/SearchBar.tsx
 'use client'
 
-export default function SearchBar({ searchTerm, setSearchTerm }) {
+interface SearchBarProps {
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SearchBar({ searchTerm, setSearchTerm }: SearchBarProps) {
     return (
         <div className="mb-4">
             <input
