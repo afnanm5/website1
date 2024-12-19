@@ -1,7 +1,9 @@
 // app/layout.tsx
 'use client'
 
+// app/layout.tsx
 import '../styles/globals.css';
+
 
 export default function Layout({ children }) {
     return (
